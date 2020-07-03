@@ -1,0 +1,84 @@
+entities:
+- dob
+- last_name
+- policy
+- unique_id
+- zip_code
+forms:
+- faq_form
+intents:
+- inform:
+    use_entities: []
+- request_faq
+- greet
+- affirm
+- thankyou
+- bot_challenge
+- goodbye_intent
+- chitchat
+responses:
+  utter_ask_continue:
+  - text: do you want to continue?
+  utter_ask_dob:
+  - text: Could you please tell me your date of birth
+  utter_ask_last_name:
+  - text: Could you please tell me your last name?
+  utter_ask_policy:
+  - text: Could you please help me to get some of your details, tell me your policy number?
+  utter_ask_unique_id:
+  - text: Could you please tell me your unique id?
+  utter_ask_zip_code:
+  - text: Could you please tell me your zip code?
+  utter_bot_challenge:
+  - text: Entered story happy path
+  utter_chitchat:
+  - text: chitchat
+  utter_default:
+  - text: sorry, I didn't understand you, please try input something else
+  utter_greet:
+  - text: Hello! I am FNOL bot! How can I help?
+  utter_happy_path:
+  - text: Entered story happy path
+  utter_iamabot:
+  - text: I am a bot, powered by Rasa.
+  utter_noworries:
+  - text: you are welcome :)
+  utter_slots_values:
+  - text: "I am going to run a search in our database using the following parameters:\n\
+      \ - policy number: {policy}\n - last name: {last_name}\n - unique id: {unique_id}\n\
+      \ - date of birth: {dob}\n - zip code: {zip_code}"
+  utter_submit:
+  - text: All done!
+  utter_unhappy_path:
+  - text: Entered story happy path
+  utter_wrong_dob:
+  - text: your date of birth is not in the database, please try again
+  utter_wrong_last_name:
+  - text: last name is not in the database, please try again
+  utter_wrong_policy:
+  - text: policy number is not in the database, please try again
+  utter_wrong_unique_id:
+  - text: your unique id is not in the database, please try again
+  utter_wrong_zip_code:
+  - text: your zip code is not in the database, please try again
+session_config:
+  carry_over_slots_to_new_session: true
+  session_expiration_time: 60
+slots:
+  dob:
+    auto_fill: false
+    type: unfeaturized
+  last_name:
+    auto_fill: false
+    type: unfeaturized
+  policy:
+    auto_fill: false
+    type: unfeaturized
+  requested_slot:
+    type: unfeaturized
+  unique_id:
+    auto_fill: false
+    type: unfeaturized
+  zip_code:
+    auto_fill: false
+    type: unfeaturized
